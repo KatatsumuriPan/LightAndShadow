@@ -1,12 +1,12 @@
 package kpan.light_and_shadow.item;
 
-import net.minecraft.item.Item;
-
 import java.util.ArrayList;
+import net.minecraft.item.Item;
 
 public class ItemInit {
 
     public static final ArrayList<Item> ITEMS = new ArrayList<>();
 
-    //	public static final ItemBase APPLE = new ItemBase("apple", CreativeTabs.FOOD);
+    public static final ItemBase LIGHT = new ItemLight("light");
+    public static final ItemBase SHADOW = new ItemShadow("shadow");
 }

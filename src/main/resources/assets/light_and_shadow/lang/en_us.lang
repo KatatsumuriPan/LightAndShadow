@@ -1,1 +1,5 @@
+##1行目は開けとく##
+##=の前後にスペースを入れてはならない##
 
+item.light_and_shadow.light.name=Light
+item.light_and_shadow.shadow.name=Shadow

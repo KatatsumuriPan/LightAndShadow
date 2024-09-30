@@ -5,8 +5,7 @@ import kpan.light_and_shadow.asm.core.adapters.InjectInstructionsAdapter;
 import kpan.light_and_shadow.asm.core.adapters.Instructions;
 import kpan.light_and_shadow.asm.core.adapters.MixinAccessorAdapter;
 import kpan.light_and_shadow.asm.core.adapters.MyClassVisitor;
-import kpan.light_and_shadow.asm.tf.TF_FontRenderer;
-import kpan.light_and_shadow.asm.tf.TF_TileEntityFurnace;
+import kpan.light_and_shadow.asm.tf.TF_Entity;
 import kpan.light_and_shadow.util.ListUtil;
 import kpan.light_and_shadow.util.ReflectionUtil;
 import net.minecraft.launchwrapper.IClassTransformer;
@@ -42,8 +41,7 @@ public class AsmTransformer implements IClassTransformer {
             ClassVisitor cv = cw;
             cv = rearrangeThisAfterDeobfuscation(cv, transformedName);
             cv = MixinAccessorAdapter.transformAccessor(cv, transformedName);
-            cv = TF_FontRenderer.appendVisitor(cv, transformedName);
-            cv = TF_TileEntityFurnace.appendVisitor(cv, transformedName);
+            cv = TF_Entity.appendVisitor(cv, transformedName);
 
             if (cv == cw)
                 return bytes;

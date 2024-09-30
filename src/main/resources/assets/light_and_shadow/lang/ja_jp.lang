@@ -1,1 +1,6 @@
+##1行目は開けとく##
+##=の前後にスペースを入れてはならない##
+
+item.light_and_shadow.light.name=ライトブロック
+item.light_and_shadow.shadow.name=シャドーブロック
 

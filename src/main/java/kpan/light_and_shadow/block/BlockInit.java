@@ -6,6 +6,7 @@ public class BlockInit {
 
     public static final ArrayList<BlockBase> BLOCKS = new ArrayList<>();
 
-    //	public static final BlockBase STONE = new BlockBase("stone", Material.ROCK);
+    public static final BlockLight LIGHT_BLOCK = new BlockLight("light_block");
+    public static final BlockShadow SHADOW_BLOCK = new BlockShadow("shadow_block");
 
 }

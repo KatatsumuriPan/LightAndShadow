@@ -1,8 +1,12 @@
 package kpan.light_and_shadow.asm.core.adapters;
 
+import java.util.ArrayList;
+import java.util.List;
 import kpan.light_and_shadow.asm.core.AsmNameRemapper;
 import kpan.light_and_shadow.asm.core.AsmUtil;
+import kpan.light_and_shadow.asm.core.adapters.Instructions.Instr;
 import kpan.light_and_shadow.asm.core.adapters.Instructions.OpcodeMethod;
+import kpan.light_and_shadow.asm.core.adapters.Instructions.OpcodeVar;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.objectweb.asm.MethodVisitor;
@@ -15,6 +19,8 @@ public class RedirectInvokeAdapter extends MyMethodVisitor {
     private final String invokedMethodMcpName;
     private final String invokedMethodRuntimeName;
     private final @Nullable String invokedMethodDesc;
+    private final List<Instr> appendedInstructions = new ArrayList<>();
+    private final List<String> appendedParamDescs = new ArrayList<>();
     public RedirectInvokeAdapter(@NotNull MethodVisitor mv, String nameForDebug, OpcodeMethod opcode, String redirectClass, String invokedMethodOwner, String invokedMethodMcpName, @Nullable String invokedMethodDesc) {
         super(mv, nameForDebug);
         this.opcode = opcode;
@@ -25,6 +31,12 @@ public class RedirectInvokeAdapter extends MyMethodVisitor {
         this.invokedMethodDesc = invokedMethodDesc;
     }
 
+    public RedirectInvokeAdapter appendCaller(String callerClass) {
+        appendedInstructions.add(Instr.varInsn(OpcodeVar.ALOAD, 0));
+        appendedParamDescs.add(AsmUtil.toDesc(callerClass));
+        return this;
+    }
+
     @Override
     public void visitMethodInsn(int opcode, String owner, String name, String desc, boolean itf) {
         if (opcode == this.opcode.opcode
@@ -32,6 +44,13 @@ public class RedirectInvokeAdapter extends MyMethodVisitor {
                 && name.equals(invokedMethodRuntimeName)
                 && (invokedMethodDesc == null || desc.equals(invokedMethodDesc))
         ) {
+            for (Instr instr : appendedInstructions) {
+                if (mv != null)
+                    instr.visit(mv, this);// appendedInstructionsにはALOAD系しか含まない&&superがvarInsnをOverrideしてないのでセーフ
+            }
+            for (String appendedParamDesc : appendedParamDescs) {
+                desc = AsmUtil.insertToMethodDesc(desc, -1, appendedParamDesc);
+            }
             switch (this.opcode) {
                 case VIRTUAL, INTERFACE, SPECIAL -> {
                     super.visitMethodInsn(OpcodeMethod.STATIC.opcode, redirectClass, invokedMethodMcpName, AsmUtil.insertToMethodDesc(desc, 0, invokedMethodOwner), false);

@@ -123,6 +123,8 @@ public class AsmUtil {
     public static String insertToMethodDesc(String methodDesc, int index, String desc) {
         List<String> list = decomposeMethodDesc(methodDesc);
         String returnDesc = list.remove(list.size() - 1);
+        if (index < 0)
+            index += list.size() + 1;
         list.add(index, desc);
         return toMethodDesc(returnDesc, list.toArray());
     }

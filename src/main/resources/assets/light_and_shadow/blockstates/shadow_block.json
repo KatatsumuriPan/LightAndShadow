@@ -1,0 +1,103 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "block_shadow_level": {
+      "0": {
+        "model": "light_and_shadow:invisible"
+      },
+      "1": {
+        "model": "light_and_shadow:invisible"
+      },
+      "2": {
+        "model": "light_and_shadow:invisible"
+      },
+      "3": {
+        "model": "light_and_shadow:invisible"
+      },
+      "4": {
+        "model": "light_and_shadow:invisible"
+      },
+      "5": {
+        "model": "light_and_shadow:invisible"
+      },
+      "6": {
+        "model": "light_and_shadow:invisible"
+      },
+      "7": {
+        "model": "light_and_shadow:invisible"
+      },
+      "8": {
+        "model": "light_and_shadow:invisible"
+      },
+      "9": {
+        "model": "light_and_shadow:invisible"
+      },
+      "10": {
+        "model": "light_and_shadow:invisible"
+      },
+      "11": {
+        "model": "light_and_shadow:invisible"
+      },
+      "12": {
+        "model": "light_and_shadow:invisible"
+      },
+      "13": {
+        "model": "light_and_shadow:invisible"
+      },
+      "14": {
+        "model": "light_and_shadow:invisible"
+      },
+      "15": {
+        "model": "light_and_shadow:invisible"
+      }
+    },
+    "inventory_0": {
+      "model": "light_and_shadow:shadow/shadow0"
+    },
+    "inventory_1": {
+      "model": "light_and_shadow:shadow/shadow1"
+    },
+    "inventory_2": {
+      "model": "light_and_shadow:shadow/shadow2"
+    },
+    "inventory_3": {
+      "model": "light_and_shadow:shadow/shadow3"
+    },
+    "inventory_4": {
+      "model": "light_and_shadow:shadow/shadow4"
+    },
+    "inventory_5": {
+      "model": "light_and_shadow:shadow/shadow5"
+    },
+    "inventory_6": {
+      "model": "light_and_shadow:shadow/shadow6"
+    },
+    "inventory_7": {
+      "model": "light_and_shadow:shadow/shadow7"
+    },
+    "inventory_8": {
+      "model": "light_and_shadow:shadow/shadow8"
+    },
+    "inventory_9": {
+      "model": "light_and_shadow:shadow/shadow9"
+    },
+    "inventory_10": {
+      "model": "light_and_shadow:shadow/shadow10"
+    },
+    "inventory_11": {
+      "model": "light_and_shadow:shadow/shadow11"
+    },
+    "inventory_12": {
+      "model": "light_and_shadow:shadow/shadow12"
+    },
+    "inventory_13": {
+      "model": "light_and_shadow:shadow/shadow13"
+    },
+    "inventory_14": {
+      "model": "light_and_shadow:shadow/shadow14"
+    },
+    "inventory_15": {
+      "model": "light_and_shadow:shadow/shadow15"
+    }
+  }
+}
