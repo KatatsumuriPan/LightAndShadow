@@ -53,7 +53,7 @@ public class Remapper {
         }
     }
     private static void loadMcpMap() throws IOException {
-        InputStream stream = Remapper.class.getResourceAsStream("/nameremapper/srg2mcp.txt");
+        InputStream stream = Remapper.class.getResourceAsStream("/nameremapper/srg2mcp.list");
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {// readerがcloseされれば全部closeされる(はず)
             String owner = "";
             boolean uniqueMethod = false;
