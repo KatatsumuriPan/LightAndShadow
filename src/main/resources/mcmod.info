@@ -1,12 +1,14 @@
-[{
+[
+  {
     "modid": "${modid}",
     "name": "${modname}",
     "description": "Port Light Block and add Shadow Block",
     "version": "${version}",
     "mcversion": "${mcversion}",
-    "logoFile": "",
+    "logoFile": "assets/${modid}/icon.png",
     "url": "",
     "authorList": ["Katatsumuri.pan"],
     "credits": "",
     "dependencies": []
-}]
+  }
+]
