@@ -10,6 +10,7 @@ import kpan.light_and_shadow.util.ListUtil;
 import kpan.light_and_shadow.util.ReflectionUtil;
 import net.minecraft.launchwrapper.IClassTransformer;
 import net.minecraftforge.fml.common.asm.ASMTransformerWrapper.TransformerWrapper;
+import net.minecraftforge.fml.common.asm.transformers.DeobfuscationTransformer;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
@@ -95,7 +96,7 @@ public class AsmTransformer implements IClassTransformer {
         int deobfIndex = ListUtil.indexOf(transformers, transformer -> {
             if (transformer instanceof TransformerWrapper) {
                 IClassTransformer parent = ReflectionUtil.getPrivateField(TransformerWrapper.class, transformer, "parent");
-                return parent.getClass() == AsmTransformer.class;
+                return parent.getClass() == DeobfuscationTransformer.class;
             }
             return transformer.getClass().getName().equals("net.minecraftforge.fml.common.asm.transformers.DeobfuscationTransformer");
         });

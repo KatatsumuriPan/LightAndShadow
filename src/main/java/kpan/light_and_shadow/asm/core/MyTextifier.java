@@ -7,7 +7,7 @@ public class MyTextifier extends Textifier {
     private final @Nullable String methodName;
 
     public MyTextifier(@Nullable String methodName) {
-        super(AsmUtil.ASM_VER);//引数アリじゃないとException投げる
+        super(AsmUtil.ASM_VER);// 引数アリじゃないとException投げる
         this.methodName = methodName;
     }
     @Override
