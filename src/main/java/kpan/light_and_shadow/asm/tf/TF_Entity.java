@@ -29,7 +29,7 @@ public class TF_Entity {
                 }
                 return mv;
             }
-        };
+        }.setSuccessExpectedMin(0);// rayTraceはClientOnlyのため
         return newcv;
     }
 }

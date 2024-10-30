@@ -19,8 +19,9 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
+import net.minecraftforge.fml.relauncher.Side;
 
-@EventBusSubscriber
+@EventBusSubscriber(Side.CLIENT)
 public class TickingClientHandler {
 
     private static int lightHeldTick = 0;
