@@ -6,10 +6,12 @@ import kpan.light_and_shadow.ModTagsGenerated;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin.MCVersion;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin.Name;
+import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin.SortingIndex;
 
 @IFMLLoadingPlugin.TransformerExclusions({ModTagsGenerated.MODGROUP + ".asm.core.", ModTagsGenerated.MODGROUP + ".asm.tf.", ModTagsGenerated.MODGROUP + ".util.ReflectionUtil"})
 @Name("AsmPlugin")
 @MCVersion("1.12.2")
+@SortingIndex(1357)
 public class AsmPlugin implements IFMLLoadingPlugin {
 
     public AsmPlugin() {
