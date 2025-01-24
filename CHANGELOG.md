@@ -1,5 +1,9 @@
 # Change Log
 
+### [1.12.2-forge-1.2.0](https://github.com/KatatsumuriPan/LightAndShadow/releases/tag/1.12.2-forge-1.2.0) - 2025-01-24
+
+- Fix server crashing bug on CleanroomLoader.
+
 ### [1.12.2-forge-1.1.0](https://github.com/KatatsumuriPan/LightAndShadow/releases/tag/1.12.2-forge-1.1.0) - 2024-10-31
 
 - Fix server crashing bug.
